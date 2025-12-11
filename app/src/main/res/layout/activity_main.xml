@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/eCountries"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Countries (csv) e.g. US,CO"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
+    <EditText
+        android:id="@+id/eProtocols"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Protocols (csv) e.g. http,https,socks5"
+        app:layout_constraintTop_toBottomOf="@id/eCountries"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
+    <EditText
+        android:id="@+id/eLimit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Limit"
+        android:inputType="number"
+        app:layout_constraintTop_toBottomOf="@id/eProtocols"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="8dp" />
+
+    <Button
+        android:id="@+id/bFetch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Obtener proxies"
+        app:layout_constraintTop_toBottomOf="@id/eProtocols"
+        app:layout_constraintStart_toEndOf="@id/eLimit"
+        android:layout_marginStart="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/bFetch"
+        app:layout_constraintBottom_toTopOf="@id/pBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
+    <ProgressBar
+        android:id="@+id/pBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/tStatus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
+    <TextView
+        android:id="@+id/tStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Listo"
+        app:layout_constraintBottom_toTopOf="@id/bStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
+    <Button
+        android:id="@+id/bStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar verificación"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="8dp" />
+
+    <Button
+        android:id="@+id/bStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Detener"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bStart"
+        android:layout_marginStart="8dp" />
+
+    <Button
+        android:id="@+id/bExport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exportar válidos"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="8dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
